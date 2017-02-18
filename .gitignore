@@ -30,6 +30,10 @@ build/Release
 node_modules
 jspm_packages
 
+client/node_modules
+client/bower_components
+server/node_modules
+
 # Optional npm cache directory
 .npm
 
