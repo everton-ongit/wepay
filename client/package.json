@@ -1,0 +1,37 @@
+{
+  "name": "wepay-client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/everton-ongit/wepay.git"
+  },
+  "contributors": [
+    {
+      "name": "Tullyo Ryann",
+      "email": "tullyo.ryann@gmail.com",
+      "url": "https://github.com/TullyoRyann"
+    },
+    {
+      "name": "Everton Santos",
+      "email": "everton.mailbox@gmail.com",
+      "url": "https://github.com/everton-ongit"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/everton-ongit/wepay/issues"
+  },
+  "homepage": "https://github.com/everton-ongit/wepay#readme",
+  "dependencies": {
+    "angular": "^1.6.1",
+    "angular-animate": "^1.6.1",
+    "angular-aria": "^1.6.1",
+    "angular-material": "http://github.com/angular/bower-material/tarball/v1.1.0-rc2",
+    "angular-ui-router": "^0.3.2"
+  }
+}

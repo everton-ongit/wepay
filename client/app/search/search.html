@@ -1,0 +1,12 @@
+<md-content class="md-padding" layout-xs="column" layout="column">
+	<md-input-container class="md-block">
+    <label>pesquisar</label>
+    <input ng-model="name">
+  </md-input-container>
+	<md-list>
+	 	<md-list-item ng-repeat="user in users | filter:name" ng-click="selectItem()">
+			Nome: {{user.name}}
+	 	<md-divider ng-if="!last"></md-divider>
+	 	</md-list-item>
+ 	</md-list>
+</md-content>

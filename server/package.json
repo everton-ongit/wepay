@@ -1,0 +1,35 @@
+{
+  "name": "wepay",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/everton-ongit/wepay.git"
+  },
+  "contributors": [
+    {
+      "name": "Everton Santos",
+      "email": "everton.mailbox@gmail.com",
+      "url": "https://github.com/everton-ongit"
+    },
+    {
+      "name": "Tullyo Ryann",
+      "email": "tullyo.ryann@gmail.com",
+      "url": "https://github.com/TullyoRyann"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/everton-ongit/wepay/issues"
+  },
+  "homepage": "https://github.com/everton-ongit/wepay#readme",
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "express": "^4.14.1",
+    "mongoose": "^4.8.3"
+  }
+}

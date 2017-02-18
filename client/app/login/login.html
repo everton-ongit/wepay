@@ -1,0 +1,28 @@
+<md-content layout="row" flex layout-align="center center" layout-padding>
+	<md-card ui-view flex=40  flex-xs="100" flex-gt-xs="50">
+		<form name="loginForm" ng-submit="login()" data-ng-controller="LoginCtrl as login" class="login-box">
+		  <md-card-title>
+		    <md-card-title-text layout-align="center center">
+		      <span class="md-headline">Wep Pay</span>
+		     <!--  <p class="error-text" ng-if="login.loginError">{{login.loginError}}</p> -->
+		    </md-card-title-text>
+		  </md-card-title>
+		  <md-card-content>
+		    <md-input-container class="md-block">
+		      <label>Nome</label>
+		      <input type="text" ng-model="user.name">
+		    </md-input-container>
+		    <md-input-container class="md-block">
+		      <label>Senha</label>
+		      <input type="password" ng-model="user.password">
+		    </md-input-container>
+		  </md-card-content>
+		  <md-card-actions layout="row" layout-align="end center" layout-xs="column">
+		    <md-button class="md-primary" type="submit">Login</md-button>
+		    <span flex></span>
+		    <md-button ui-sref="forgot-password">Facebook</md-button></div>
+		    <md-button ui-sref="auth.register">Google</md-button>
+		  </md-card-actions>
+		</form>
+	</md-card>
+</md-content>

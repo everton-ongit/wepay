@@ -1,0 +1,26 @@
+<md-content class="md-padding" layout-xs="column" layout="column">
+ <div flex-xs flex-gt-xs="50" layout="column">
+  <md-card>
+  	<md-card-title>
+	    <md-card-title-text>
+		    <div layout="row" layout-align="center center">
+				 	<span class="md-headline">{{user.name}}</span>
+				 </div>
+	    </md-card-title-text>
+	  </md-card-title>
+  </md-card>
+  <md-input-container class="md-block">
+    <label>Valor</label>
+    <input type="text" ng-model="value" ui-number-mask="2">
+  </md-input-container>
+  <md-input-container class="md-block">
+    <label>Messagem</label>
+    <textarea ng-model="message" md-maxlength="150" rows="5" md-select-on-focus>
+  </textarea>
+ </div>
+ 	<div layout="column">
+ 		<md-button class="md-raised md-primary" aria-label="pagar">
+			pagar
+		</md-button>
+ 	</div>
+</md-content>
