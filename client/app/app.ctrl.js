@@ -1,10 +1,10 @@
 (function () {
     'use strict';
-    angular.module('myApp').controller('AppCtrl', ['$scope', '$state', '$mdSidenav', AppCtrl]);
+    angular.module('myApp').controller('AppCtrl', ['$scope', 'appService', '$state', '$mdSidenav', AppCtrl]);
 
-    function AppCtrl($scope, $state, $mdSidenav) {
+    function AppCtrl($scope, appService, $state, $mdSidenav) {
 
-        $scope.title = "Bem Vindo";
+        $scope.title = appService.title;
 
         $scope.toggleSidenav = function (menuId) {
             $mdSidenav(menuId).toggle();
