@@ -33,7 +33,7 @@
 </head>
 
 <body ng-controller="AppCtrl" layout="row" ng-cloak>
-	<md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+	<md-sidenav ng-if="isUsuarioLogado()" layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
 		<md-toolbar class="md-tall md-hue-2">
 			<span flex></span>
 			<div layout="column" class="md-toolbar-tools-bottom inset">
@@ -58,7 +58,7 @@
 		</md-list>
 	</md-sidenav>
 
-	<div layout="column" class="relative" layout-fill role="main">
+	<div ng-if="isUsuarioLogado()" layout="column" class="relative" layout-fill role="main">
 		<md-toolbar>
 	    <div class="md-toolbar-tools">
 	        <md-button class="md-icon-button" aria-label="Menu Button" hide-gt-md ng-click="toggleSidenav('left')">
