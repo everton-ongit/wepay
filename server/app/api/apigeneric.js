@@ -21,11 +21,11 @@ var api = function (entityName, Model) {
             for (var p in req.body) {
                 model[p] = req.body[p];
             }
-            model.save(function (err) {
+            model.save(function (err,model) {
                 if (err)
                     res.send(err);
 
-                res.json({ message: 'Salvo com sucesso from apigeneric!' });
+                res.json({ message: 'Salvo com sucesso from apigeneric!', model: model });
             });
         });
 

@@ -6,10 +6,18 @@ var mongoose = require('mongoose');
 
 mongoose.connect('mongodb://192.168.99.100:27017/wepay');
 
+//CONFIGURA
+var porta = 8081; 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(function (req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    next();
+});
 
-var porta = 8080; 
 
 var router = express.Router();
 
