@@ -1,9 +1,11 @@
 (function(){
 'use strict';
-	angular.module('myApp').controller('HomeCtrl',['$scope', '$timeout', 'ssSideNav', HomeCtrl]);
+	angular.module('myApp').controller('HomeCtrl',['$scope', '$timeout', '$mdSidenav', 'ssSideNav', HomeCtrl]);
 
-	function HomeCtrl($scope, $timeout, ssSideNav){
-		
+	function HomeCtrl($scope, $timeout, $mdSidenav, ssSideNav){
+
+		$scope.$parent.title = "Bem Vindo";
+
 		$scope.menu = ssSideNav;
     
     $timeout(function () {
@@ -16,20 +18,9 @@
 			$mdSidenav('left').toggle();
 		};
 
-		$scope.list = [
-			{
-				name: 'agua', value: 200.00, description: 'primeira transação'
-			},
-			{
-				name: 'luz', value: 250.00, description: 'segunda transação'
-			},
-			{
-				name: 'telefone', value: 300.00, description: 'terceira transação'
-			},
-			{
-				name: 'casa', value: 350.00, description: 'quarta transação'
-			}
-		]
+		$scope.onClickMenu = function () {
+      $mdSidenav('left').toggle();
+    };
 
 	}
 

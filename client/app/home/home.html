@@ -1,43 +1,24 @@
-<!-- class="md-padding" layout-xs="column" layout="column" -->
-<md-content ng-controller="HomeCtrl" layout="row">
+<md-content ng-controller="HomeCtrl" layout="row"> 
   <div layout="row">
     <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
     	<md-toolbar class="md-theme-indigo">
-        	<h1 class="md-toolbar-tools">Menu</h1>
+        	<h1 class="md-toolbar-tools">Tullyo</h1>
       </md-toolbar>
       <md-content flex role="navigation" ss-style-color="{'background-color': 'primary.default'}">
 	    	<ss-sidenav flex menu="menu"></ss-sidenav>
 	    </md-content>
-    </md-sidenav>
+    </md-sidenav>  
   </div>
   <div flex>
-	  <div flex-xs flex-gt-xs="50" layout="column">
-		  <md-card>
-		  	<md-card-title>
-			    <md-card-title-text>
-		        <span class="md-headline">Saldo</span>
-		        <span class="md-subhead">R$ 50,00</span>
-			    </md-card-title-text>
-			  </md-card-title>
-	  </md-card>
- 	</div>
-	 <div>
-		 <md-list>
-			 	<md-list-item ng-repeat="(key, value) in list" ng-click="selectItem()">
-			 		<div flex="40">
-			 			Conta: {{value.name}}
-			 		</div>
-			 		<div flex>
-			 			Valor: {{value.value | currency:"R$"}}
-			 		</div>
-			 		<md-divider ng-if="!last"></md-divider>
-			 	</md-list-item>
-		 	</md-list>
-	 </div>
-	 	<div layout="row" layout-align="center center">
-	 		<md-button class="md-fab md-primary" aria-label="pagar">
-				pagar
-			</md-button>
-	 	</div>
-</div>
-</div>
+		<md-toolbar>
+	    <div class="md-toolbar-tools">
+	        <md-button class="md-icon-button" aria-label="Menu Button" hide-gt-md ng-click="onClickMenu();">
+	           <md-icon md-svg-icon="menu" aria-label="menu "></md-icon>
+	        </md-button>
+	        <h2>{{title}}</h2>
+	        <span flex></span>
+	    </div>
+		</md-toolbar>
+    <div ui-view></div>  
+  </div>
+</md-content>
