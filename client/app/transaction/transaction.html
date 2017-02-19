@@ -10,17 +10,15 @@
 	  </md-card-title>
   </md-card>
   <md-input-container class="md-block">
-    <label>Valor</label>
-    <input type="text" ng-model="value" ui-number-mask="2">
+    <label>Valor*</label>
+    <input type="text" ng-model="transacao.valor" ui-number-mask="2">
   </md-input-container>
   <md-input-container class="md-block">
     <label>Messagem</label>
-    <textarea ng-model="message" md-maxlength="150" rows="5" md-select-on-focus>
+    <textarea ng-model="transacao.mensagem" md-maxlength="150" rows="5" md-select-on-focus>
   </textarea>
  </div>
  	<div layout="column">
- 		<md-button class="md-raised md-primary" aria-label="pagar">
-			pagar
-		</md-button>
+ 		<md-button class="md-raised md-primary" aria-label="pagar" ng-click="pagar()" ng-disabled="!transacao.valor">pagar</md-button>
  	</div>
 </md-content>
