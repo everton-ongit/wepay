@@ -1,34 +1,75 @@
 <!DOCTYPE html>
 <html ng-app="myApp" lang="pt-br">
-	<head>
-		<meta charset="utf-8">
-		<title>We Pay</title>
-		<link rel="stylesheet" href="../node_modules/angular-material/angular-material.min.css">
-		<link rel="stylesheet" href="../bower_components/angular-material-sidenav/angular-material-sidenav.css" />
 
-		<script src="../node_modules/angular/angular.js"></script>
-		<script src="../node_modules/angular-aria/angular-aria.js"></script>
-		<script src="../node_modules/angular-animate/angular-animate.js"></script>
-		<script src="../node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>   
-		<script src="../node_modules/angular-material/angular-material.min.js"></script>
+<head>
+	<meta charset="utf-8">
+	<title>We Pay</title>
+	<link rel="stylesheet" href="../node_modules/angular-material/angular-material.min.css">
 
-		<script src="../bower_components/angular-input-masks/angular-input-masks-standalone.min.js"></script>
-		<script src="../bower_components/angular-material-sidenav/angular-material-sidenav.js" type="text/javascript"></script>
+	<script src="../node_modules/angular/angular.js"></script>
+	<script src="../node_modules/angular-animate/angular-animate.js"></script>
+	<script src="../node_modules/angular-aria/angular-aria.js"></script>
+	<script src="../node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script src="../node_modules/angular-material/angular-material.min.js"></script>
 
-		<script src="js/module.js"></script>
-		<script src="js/config/myApp.config.js"></script>
+	<script src="../bower_components/angular-input-masks/angular-input-masks-standalone.min.js"></script>
 
-		<script src="login/login.ctrl.js"></script>
-		<script src="home/home.ctrl.js"></script>
-		<script src="start/start.ctrl.js"></script>
-		<script src="search/search.ctrl.js"></script>
-		<script src="transaction/transaction.ctrl.js"></script>
-		<script src="add/add.ctrl.js"></script>
+	<script src="js/module.js"></script>
+	<script src="js/config/myApp.config.js"></script>
 
-		<script src="services/apiservice.js"></script>
+	<script src="app.ctrl.js"></script>
+	<script src="login/login.ctrl.js"></script>
+	<script src="home/home.ctrl.js"></script>
+	<script src="start/start.ctrl.js"></script>
+	<script src="search/search.ctrl.js"></script>
+	<script src="transaction/transaction.ctrl.js"></script>
+	<script src="add/add.ctrl.js"></script>
 
-	</head>
-	<body ng-cloak>
-		<div ui-view></div>
-	</body>
+	<script src="services/transacao.service.js"></script>
+	<script src="services/usuario.service.js"></script>
+
+</head>
+
+<body ng-controller="AppCtrl" layout="row" ng-cloak>
+	<md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+		<md-toolbar class="md-tall md-hue-2">
+			<span flex></span>
+			<div layout="column" class="md-toolbar-tools-bottom inset">
+				<user-avatar></user-avatar>
+				<span></span>
+				<div>Firstname Lastname</div>
+				<div>email@domainname.com</div>
+			</div>
+		</md-toolbar>
+		<md-list>
+			<md-item ng-repeat="item in menu">
+				<a ng-click="navegar(item)">
+					<md-item-content md-ink-ripple layout="row" layout-align="start center">
+						<div class="inset">
+							<ng-md-icon icon="{{item.icone}}"></ng-md-icon>
+						</div>
+						<div class="inset">{{item.titulo}}
+						</div>
+					</md-item-content>
+				</a>
+			</md-item>
+		</md-list>
+	</md-sidenav>
+
+	<div layout="column" class="relative" layout-fill role="main">
+		<md-toolbar>
+	    <div class="md-toolbar-tools">
+	        <md-button class="md-icon-button" aria-label="Menu Button" hide-gt-md ng-click="toggleSidenav('left')">
+	           <md-icon md-svg-icon="menu" aria-label="menu "></md-icon>
+	        </md-button>
+	        <h2>{{title}}</h2>
+	        <span flex></span>
+	    </div>
+		</md-toolbar>
+		<md-content flex md-scroll-y>
+			<div layout="column" layout-fill layout-padding ui-view></div>
+		</md-content>
+	</div>
+</body>
+
 </html>
