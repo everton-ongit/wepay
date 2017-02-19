@@ -24,9 +24,11 @@
 					mensagem('Ocorreu um Erro, entre em contato com o suporte');
 				}
 				deferred.resolve(data);
+				$state.go('home.start');
 			});
 			deferred.promise;
-			$state.go('home.start');
+
+			
 		}
 
 		function mensagem(label) {
