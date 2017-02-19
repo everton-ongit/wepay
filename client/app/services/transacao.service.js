@@ -25,6 +25,14 @@ angular.module('myApp')
             return self.data;
         }
 
+        self.listarRecebimentos = function(userId){
+            return $http.get(self.serverUrl + self.entidade + '/recebimentos/'+ userId);
+        }
+
+        self.listarPagamentos = function(userId){
+            return $http.get(self.serverUrl + self.entidade + '/pagamentos/'+ userId);
+        }
+
         self.salvar = function (model) {
             if (model) {
                 //atualiza
@@ -40,23 +48,6 @@ angular.module('myApp')
                     return req;
                 }
             }
-        }
-
-        self.transacoesSaidaByUser = function (userId, callback) {
-
-            self.listar(function (list) {
-                console.log('all-data', list)
-                console.log('userId', userId)
-
-                var result = [];
-
-                for (var t of list) {
-                    if (t.usuarioPag == userId)
-                        result.push(t)
-                }
-                console.log('query', result)
-                callback(result);
-            })
         }
 
         return self;
