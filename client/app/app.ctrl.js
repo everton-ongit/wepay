@@ -10,14 +10,13 @@
             $mdSidenav(menuId).toggle();
         };
 
-<<<<<<< HEAD
         $scope.isUsuarioLogado = function(){
-            return appService.usuarioLogado._id;
+            return appService.usuarioLogado && appService.usuarioLogado._id;
         } 
 
         $scope.logar = function(){
             
-            if(!appService.usuarioLogado._id){
+            if(!appService.usuarioLogado || !appService.usuarioLogado._id){
 
                 $mdDialog.show({
                     controller: 'LoginCtrl',
@@ -35,9 +34,7 @@
         }
 
         $scope.logar();
-=======
-        $scope.usuarioLogado = appService.usuarioLogado;
->>>>>>> bea67aa9a1f676f4d5fead1d8a34e600cbfe3951
+        
 
         $scope.menu = [
             {
