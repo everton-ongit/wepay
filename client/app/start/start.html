@@ -7,7 +7,9 @@
 				  	chart-data="data" chart-labels="labels">
 					</canvas
 	        <span class="md-headline">Saldo</span>
-	        <span class="md-subhead">R$ 50,00</span>
+	        <span class="md-subhead">R$ {{entradas - saidas}}</span>
+					<span class="md-headline">Total entradas:{{entradas}}</span>
+					<span class="md-headline">Total pagamentos:{{saidas}}</span>
 		    </md-card-title-text>
 		  </md-card-title>
 	  </md-card>
