@@ -1,10 +1,10 @@
 (function () {
 	'use strict';
-	angular.module('myApp').controller('HomeCtrl', ['$scope', '$mdSidenav', HomeCtrl]);
+	angular.module('myApp').controller('HomeCtrl', ['$scope', '$rootScope', '$mdSidenav', HomeCtrl]);
 
-	function HomeCtrl($scope, $mdSidenav) {
+	function HomeCtrl($scope, $rootScope, $mdSidenav) {
 
-		$scope.$parent.title = "Bem Vindo";
+		$rootScope.title = 'Inicio';
 
 		$scope.toggleSidenav = function () {
 			$mdSidenav('left').toggle();

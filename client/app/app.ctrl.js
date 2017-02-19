@@ -21,7 +21,7 @@
                 $mdDialog.show({
                     controller: 'LoginCtrl',
                     templateUrl: 'login/login.html',
-                    parent: angular.element(document.body)
+                    parent: angular.element(document.getElementById('dialogContainer'))
                 })
                 .then(function(){
                     $scope.logar();

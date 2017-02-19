@@ -6,8 +6,6 @@ angular.module('myApp')
 
         self.usuarioLogado = usuarioService.listar()[0];
 
-        self.title = 'Inicio';
-
         self.usuarioRecebedor = {};
 
         return self;

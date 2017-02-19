@@ -28,7 +28,9 @@
 	<script src="services/transacao.service.js"></script>
 	<script src="services/usuario.service.js"></script>
 
-	<script src="services/app.service.js"> </script>
+	<script src="services/app.service.js">
+
+	</script>
 
 </head>
 
@@ -58,18 +60,25 @@
 	</md-sidenav>
 
 	<div ng-if="isUsuarioLogado()" layout="column" class="relative" layout-fill role="main">
+		<md-button ng-if="showPaybutton" class="md-fab md-primary md-fab-bottom-right" aria-label="Enviar" ui-sref="home.search">
+			pagar
+		</md-button>
 		<md-toolbar>
-	    <div class="md-toolbar-tools">
-	        <md-button class="md-icon-button" aria-label="Menu Button" hide-gt-md ng-click="toggleSidenav('left')">
-	           <md-icon md-svg-icon="menu" aria-label="menu"></md-icon>
-	        </md-button>
-	        <h2>{{title}}</h2>
-	        <span flex></span>
-	    </div>
+			<div class="md-toolbar-tools">
+				<md-button class="md-icon-button" aria-label="Menu Button" hide-gt-md ng-click="toggleSidenav('left')">
+					<md-icon md-svg-icon="menu" aria-label="menu"></md-icon>
+				</md-button>
+				<h2>{{title}}</h2>
+				<span flex></span>
+			</div>
 		</md-toolbar>
 		<md-content flex md-scroll-y>
 			<div layout="column" layout-fill layout-padding ui-view></div>
 		</md-content>
+	</div>
+
+	<div id="dialogContainer" ng-if="!isUsuarioLogado()" layout="column" class="relative" layout-fill>
+
 	</div>
 </body>
 
