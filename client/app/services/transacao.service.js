@@ -22,17 +22,16 @@ angular.module('myApp')
             if (model) {
                 //atualiza
                 if (model.id) {
-                    $http.post(self.serverUrl + self.entidade + '/' + model.id, model)
-                        .then(function (data) {
-
-                        })
+                    return $http.post(self.serverUrl + self.entidade + '/' + model.id, model)
+                       
                 }
                 //cria
                 else {
-                    $http.post(self.serverUrl + self.entidade, model)
-                        .then(function (result) {
+                    var req = $http.post(self.serverUrl + self.entidade, model);
+                       req.then(function (result) {
                             self.data.push(result.data.model);
                         })
+                       return req;
                 }
             }
         }
