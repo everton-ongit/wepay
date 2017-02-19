@@ -1,24 +1,29 @@
 <md-content class="md-padding" layout-xs="column" layout="column">
- <div flex-xs flex-gt-xs="50" layout="column">
-  <md-card>
-  	<md-card-title>
-	    <md-card-title-text>
-		    <div layout="row" layout-align="center center">
-				 	<span class="md-headline">{{user.nome}}</span>
-				 </div>
-	    </md-card-title-text>
-	  </md-card-title>
-  </md-card>
-  <md-input-container class="md-block">
-    <label>Valor*</label>
-    <input type="text" ng-model="transacao.valor" ui-number-mask="2">
-  </md-input-container>
-  <md-input-container class="md-block">
-    <label>Messagem</label>
-    <textarea ng-model="transacao.mensagem" md-maxlength="150" rows="5" md-select-on-focus>
+  <div flex-xs flex-gt-xs="50" layout="column">
+    <md-card>
+      <md-card-title>
+        <md-card-content>
+          <div layout="row">
+            <div flex="30">
+              <img src="/app/assets/img/default-user.png" class="md-avatar" alt="{{item.nome}}" />
+            </div>
+            <div flex="70" layout-align="center start" layout-margin>
+              <span class="md-headline">{{user.nome}}</span>
+            </div>
+          </div>
+        </md-card-content>
+      </md-card-title>
+    </md-card>
+    <md-input-container class="md-block">
+      <label>Valor*</label>
+      <input type="text" ng-model="transacao.valor" ui-number-mask="2">
+    </md-input-container>
+    <md-input-container class="md-block">
+      <label>Messagem</label>
+      <textarea ng-model="transacao.mensagem" md-maxlength="150" rows="5" md-select-on-focus>
   </textarea>
- </div>
- 	<div layout="column">
- 		<md-button class="md-raised md-primary" aria-label="pagar" ng-click="pagar()" ng-disabled="!transacao.valor">pagar</md-button>
- 	</div>
+  </div>
+  <div layout="column">
+    <md-button class="md-raised md-primary" aria-label="pagar" ng-click="pagar()" ng-disabled="!transacao.valor">pagar</md-button>
+  </div>
 </md-content>
