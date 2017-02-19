@@ -17,6 +17,13 @@
 				appService.usuarioLogado = u;
 				$mdDialog.hide();
 			}
+			else{
+				$mdToast.show(
+				$mdToast.simple()
+					.textContent('Login e/ou senha invalidos')
+					.hideDelay(3000)
+			);
+			}
 		}
 
 		$scope.cadastar = function () {

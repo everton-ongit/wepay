@@ -1,11 +1,12 @@
 <md-content ng-controller="AddCtrl" layout="column" flex layout-padding>
+	<h3>Depositar na sua conta</h3>
 	<md-input-container class="md-block">
-    <label>Valor</label>
-    <input type="text" ng-model="valor" ui-number-mask="2">
-  </md-input-container>
-  <div layout="column">
- 		<md-button class="md-raised md-primary" aria-label="confirmar" ng-click="confirmar()" ng-disabled="!valor">
+		<label>Valor</label>
+		<input type="text" ng-model="valor" ui-number-mask="2">
+	</md-input-container>
+	<div layout="column">
+		<md-button class="md-raised md-primary" aria-label="confirmar" ng-click="confirmar()" ng-disabled="!valor">
 			Confirmar
 		</md-button>
- 	</div>
+	</div>
 </md-content>

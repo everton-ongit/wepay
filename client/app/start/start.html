@@ -1,45 +1,44 @@
 <div ng-controller="StartCtrl" class="md-padding" layout-xs="column" layout="column">
 	<div flex-xs flex-gt-xs="50" layout-align="center center">
 		<md-card>
-	  	<md-card-title>
-		    <md-card-title-text layout="row">
-		    	<div flex='30'>
-		    		<canvas id="pie" class="chart chart-pie"
-					  	chart-data="data" chart-labels="labels" chart-options="options">
-						</canvas> 
-		    	</div>
-		    	<div flex layout-align="end end">
-		    		<div layout="column">
-			    		<div flex>
-				    		<span class="md-headline">Entradas</span>
-				        <span class="md-headline">{{entradas | currency:"R$ "}}</span>
-			    		</div>
-			    		<div flex>
-				    		<span class="md-headline">Saidas</span>
-				        <span class="md-headline">{{saidas | currency:"R$ "}}</span>
-			    		</div>
-			    		<div flex>
-				    		<span class="md-headline">Saldo Atual</span>
-				        <span class="md-headline">{{entradas - saidas | currency:"R$ "}}</span>
-			    		</div>
-		    		</div>
-		    	</div>
-		    </md-card-title-text>
-		  </md-card-title>
-	  </md-card>
+			<md-card-title>
+				<md-card-title-text layout="row">
+					<div flex='30'>
+						<canvas id="pie" class="chart chart-pie" chart-data="data" chart-labels="labels" chart-options="options">
+						</canvas>
+					</div>
+					<div flex layout-align="end end">
+						<div layout="column">
+							<div flex layout="row">
+								<span flex="40" class="md-headline">Entradas</span>
+								<span flex class="md-headline">{{entradas | currency:"R$ "}}</span>
+							</div>
+							<div flex layout="row">
+								<span flex="40" class="md-headline">Saidas</span>
+								<span flex class="md-headline">{{saidas | currency:"R$ "}}</span>
+							</div>
+							<div flex layout="row">
+								<span flex="40" class="md-headline">Saldo Atual</span>
+								<span flex class="md-headline">{{entradas - saidas | currency:"R$ "}}</span>
+							</div>
+						</div>
+					</div>
+				</md-card-title-text>
+			</md-card-title>
+		</md-card>
 	</div>
 	<div ng-if="list.length > 0">
 		<span class="md-headline">Histórico</span>
 		<md-list>
 			<md-list-item class="md-3-line" ng-repeat="(key, value) in list">
 				<div class="md-list-item-text" layout="column">
-						<h3>Valor: {{value.valor | currency:"R$"}}</h3> 
-						<h4 ng-if="value.mensagem">Mensagem: {{value.mensagem}}</h4>
-						<p>{{value.tipo}} - Data: {{value.data | date:'dd-MM-yyyy'}}</p>
+					<h3>Valor: {{value.valor | currency:"R$"}}</h3>
+					<h4 ng-if="value.mensagem">Mensagem: {{value.mensagem}}</h4>
+					<p>{{value.tipo}} - Data: {{value.data | date:'dd-MM-yyyy'}}</p>
 				</div>
 				<md-divider ng-if="!last"></md-divider>
 			</md-list-item>
 		</md-list>
 	</div>
 	<span class="md-headline" ng-if="list.length == 0">Você não possui transações</span>
-<div>
+	<div>
