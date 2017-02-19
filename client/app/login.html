@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ng-app="myApp" lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>We Pay</title>
+    <link rel="stylesheet" href="../node_modules/angular-material/angular-material.min.css">
+
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="../node_modules/angular-animate/angular-animate.js"></script>
+    <script src="../node_modules/angular-aria/angular-aria.js"></script>
+    <script src="../node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="../node_modules/angular-material/angular-material.min.js"></script>
+
+    <script src="../bower_components/angular-input-masks/angular-input-masks-standalone.min.js"></script>
+
+    <script src="js/module.js"></script>
+    <script src="login/login.ctrl.js"></script>
+
+
+    <script src="services/transacao.service.js"></script>
+    <script src="services/usuario.service.js"></script>
+
+    <script src="services/app.service.js">
+
+    </script>
+
+</head>
+
+<body layout="row" ng-controller="LoginCtrl" ng-cloak>
+
+    <md-content class="md-padding" layout="row" layout-fill layout-align="center center">
+
+        <md-card flex="70">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">WePay</span>
+                    <span class="md-subhead">Login</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                <div layout="row">
+                    <md-input-container class="md-block" flex>
+                        <label>Usuario</label>
+                        <input ng-model="usuario.nome">
+                    </md-input-container>
+                </div>
+                <div layout="row">
+                    <md-input-container class="md-block" flex>
+                        <label>Senha</label>
+                        <input ng-model="usuario.senha">
+                    </md-input-container>
+                </div>
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button>Cadastrar-se</md-button>
+                <md-button>Login</md-button>
+            </md-card-actions>
+        </md-card>
+
+    </md-content>
+</body>
+
+</html>
