@@ -1,29 +1,18 @@
 (function(){
 'use strict';
-	angular.module('myApp').controller('SearchCtrl',['$scope', SearchCtrl]);
+	angular.module('myApp').controller('SearchCtrl',['$scope', 'usuarioService', '$state', SearchCtrl]);
 
-	function SearchCtrl($scope){
+	function SearchCtrl($scope, usuarioService, $state){
 
 		$scope.$parent.title = "Pesquisa";
 
-		$scope.users = [
-			{name: 'João Pereira'},
-			{name: 'Maria Carla'},
-			{name: 'Carlos Pedro'},
-			{name: 'Ana Vivia'},
-			{name: 'Paulo Antoniio'},
-			{name: 'André '},
-			{name: 'Julia'},
-			{name: 'Pereira'},
-			{name: 'João'},
-			{name: 'Maria'},
-			{name: 'Carlos'},
-			{name: 'Ana'},
-			{name: 'Paulo'},
-			{name: 'André'},
-			{name: 'Julia'},
-			{name: 'Pereira'}
-		]
+		$scope.users = usuarioService.listar();
+
+		$scope.navegar = function (user) {
+        $state.go('home.transaction')
+        //$mdSidenav('left').close();
+    }
+
 	}
 
 })();

@@ -1,8 +1,8 @@
 (function(){
 'use strict';
-	angular.module('myApp').controller('TransactionCtrl',['$scope', TransactionCtrl]);
+	angular.module('myApp').controller('TransactionCtrl',['$scope', '$state', TransactionCtrl]);
 
-	function TransactionCtrl($scope){
+	function TransactionCtrl($scope, $state){
 
 		$scope.$parent.title = "Realizar Transação";
 

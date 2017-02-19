@@ -10,10 +10,8 @@ angular.module('myApp')
                 self.iniciado = true;
                 $http.get(self.serverUrl + self.entidade)
                     .then(function (result) {
-                        console.log('data', result.data);
                         for (var m of result.data) {
                             self.data.push(m);
-                            console.log('m', m);
                         }
                     })
             }
