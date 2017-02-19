@@ -10,14 +10,16 @@
             $mdSidenav(menuId).toggle();
         };
 
+        $scope.usuarioLogado = appService.usuarioLogado;
+
         $scope.menu = [
             {
-                icone: '',
+                icone: 'home',
                 titulo: 'inicio',
                 rota: 'home.start'
             },
             {
-                icone: '',
+                icone: 'add',
                 titulo: 'adicionar',
                 rota: 'home.add'
             }

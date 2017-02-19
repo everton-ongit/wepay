@@ -1,16 +1,17 @@
 (function(){
 'use strict';
-	angular.module('myApp').controller('SearchCtrl',['$scope', 'usuarioService', '$state', SearchCtrl]);
+	angular.module('myApp').controller('SearchCtrl',['$scope', 'usuarioService', '$state', 'appService', SearchCtrl]);
 
-	function SearchCtrl($scope, usuarioService, $state){
+	function SearchCtrl($scope, usuarioService, $state, appService){
 
 		$scope.$parent.title = "Pesquisa";
 
 		$scope.users = usuarioService.listar();
 
 		$scope.navegar = function (user) {
-        $state.go('home.transaction')
-        //$mdSidenav('left').close();
+			appService.usuarioRecebedor = user;
+      $state.go('home.transaction')
+      //$mdSidenav('left').close();
     }
 
 	}

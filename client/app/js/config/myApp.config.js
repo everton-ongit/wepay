@@ -69,8 +69,8 @@ angular.module('myApp').
 
 			$mdIconProvider
 				.icon('menu', '././assets/img/icons/sets/menu.svg', 24)
-				.icon('backspace', '././assets/img/icons/sets/backspace.svg', 24)
-				.icon('search', '././assets/img/icons/sets/search.svg', 24)
+				.icon('home', '././assets/img/icons/sets/home.svg', 24)
+				.icon('add', '././assets/img/icons/sets/add.svg', 24)
 
 			/*  	 	 $mdIconProvider
 				   .icon('add', '././assets/img/icons/sets/add.svg', 24)
