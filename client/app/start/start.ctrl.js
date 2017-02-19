@@ -4,10 +4,9 @@
 
 	function StartCtrl($scope, $rootScope, appService, transacaoService, entradaService) {
 
-		$scope.data = [];
-		$scope.labels = ['Fevereiro'];
-		$scope.series = ['pagas'];
-
+		$scope.labels = ['Entrada', 'Saída'];
+	  $scope.data = [0, 0];
+  	
 		$scope.$parent.title = "Inicio";
 		$rootScope.showPaybutton = true;
 
@@ -22,8 +21,9 @@
 					i.tipo = 'recebimento';
 					$scope.list.push(i)
 					$scope.entradas += i.valor;
+					$scope.data[0] += i.valor;
 				}
-			})
+		})
 
 		transacaoService.listarPagamentos(appService.usuarioLogado._id)
 			.then(function (retorno) {
@@ -31,8 +31,9 @@
 					i.tipo = 'pagamento';
 					$scope.list.push(i)
 					$scope.saidas += i.valor;
+					$scope.data[1] += i.valor;
 				}
-			})
+		})
 
 		entradaService.listarEntradas(appService.usuarioLogado._id)
 			.then(function (retorno) {
@@ -40,21 +41,9 @@
 					i.tipo = 'entradas';
 					$scope.list.push(i)
 					$scope.entradas += i.valor;
+					$scope.data[0] += i.valor;
 				}
-			})
-
-
-		ajustarChart();
-
-		function ajustarChart() {
-			var soma = 0;
-			angular.forEach($scope.list, function (value, key) {
-				if (value.valor) {
-					soma += value.valor;
-				}
-			});
-			$scope.data.push(soma);
-		}
+		})
 
 	}
 

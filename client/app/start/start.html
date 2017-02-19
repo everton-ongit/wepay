@@ -2,19 +2,34 @@
 	<div flex-xs flex-gt-xs="50" layout-align="center center">
 		<md-card>
 	  	<md-card-title>
-		    <md-card-title-text layout-align="center center">
-		    	<canvas id="bar" class="chart chart-bar"
-				  	chart-data="data" chart-labels="labels">
-					</canvas
-	        <span class="md-headline">Saldo</span>
-	        <span class="md-subhead">R$ {{entradas - saidas}}</span>
-					<span class="md-headline">Total entradas:{{entradas}}</span>
-					<span class="md-headline">Total pagamentos:{{saidas}}</span>
+		    <md-card-title-text layout="row">
+		    	<div flex='30'>
+		    		<canvas id="pie" class="chart chart-pie"
+					  	chart-data="data" chart-labels="labels" chart-options="options">
+						</canvas> 
+		    	</div>
+		    	<div flex layout-align="end end">
+		    		<div layout="column">
+			    		<div flex>
+				    		<span class="md-headline">Entradas</span>
+				        <span class="md-headline">{{entradas | currency:"R$ "}}</span>
+			    		</div>
+			    		<div flex>
+				    		<span class="md-headline">Saidas</span>
+				        <span class="md-headline">{{saidas | currency:"R$ "}}</span>
+			    		</div>
+			    		<div flex>
+				    		<span class="md-headline">Saldo Atual</span>
+				        <span class="md-headline">{{entradas - saidas | currency:"R$ "}}</span>
+			    		</div>
+		    		</div>
+		    	</div>
 		    </md-card-title-text>
 		  </md-card-title>
 	  </md-card>
 	</div>
-	<div>
+	<div ng-if="list.length > 0">
+		<span class="md-headline">Histórico</span>
 		<md-list>
 			<md-list-item class="md-3-line" ng-repeat="(key, value) in list">
 				<div class="md-list-item-text" layout="column">
@@ -26,4 +41,5 @@
 			</md-list-item>
 		</md-list>
 	</div>
+	<span class="md-headline" ng-if="list.length == 0">Você não possui transações</span>
 <div>
