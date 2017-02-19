@@ -1,4 +1,4 @@
-<div ng-controller="StartCtrl" class="md-padding" layout-xs="column" layout="column">	
+<div ng-controller="StartCtrl" class="md-padding" layout-xs="column" layout="column">
 	<div flex-xs flex-gt-xs="50" layout-align="center center">
 		<md-card>
 	  	<md-card-title>
@@ -13,16 +13,15 @@
 	  </md-card>
 	</div>
 	<div>
-	 <md-list>
-		 	<md-list-item ng-repeat="(key, value) in list" ng-click="selectItem()">
-		 		<div flex="40">
-		 			Conta: {{value.name}}
-		 		</div>
-		 		<div flex>
-		 			Valor: {{value.valor | currency:"R$"}}
-		 		</div>
-		 		<md-divider ng-if="!last"></md-divider>
-		 	</md-list-item>
-	 	</md-list>
+		<md-list>
+			<md-list-item class="md-3-line" ng-repeat="(key, value) in list">
+				<div class="md-list-item-text" layout="column">
+						<h3>Valor: {{value.valor | currency:"R$"}}</h3> 
+						<h4 ng-if="value.mensagem">Mensagem: {{value.mensagem}}</h4>
+						<p>{{value.tipo}} - Data: {{value.data | date:'dd-MM-yyyy'}}</p>
+				</div>
+				<md-divider ng-if="!last"></md-divider>
+			</md-list-item>
+		</md-list>
 	</div>
 <div>

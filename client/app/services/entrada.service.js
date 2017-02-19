@@ -19,6 +19,10 @@ angular.module('myApp')
             }
             return self.data;
         }
+        
+        self.listarEntradas = function(userId){
+            return $http.get(self.serverUrl + self.entidade + '/dousuario/'+ userId);
+        }
 
         self.salvar = function (model) {
             if (model) {

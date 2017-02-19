@@ -10,10 +10,8 @@ angular.module('myApp')
                 self.iniciado = true;
                 $http.get(self.serverUrl + self.entidade)
                     .then(function (result) {
-                        console.log('data', result.data);
                         for (var m of result.data) {
                             self.data.push(m);
-                            console.log('m', m);
                         }
                     })
             }
@@ -24,20 +22,27 @@ angular.module('myApp')
             if (model) {
                 //atualiza
                 if (model.id) {
-                    $http.post(self.serverUrl + self.entidade + '/' + model.id, model)
-                        .then(function (data) {
+                    var req = $http.post(self.serverUrl + self.entidade + '/' + model.id, model);
 
-                        })
+                    req.then(function (data) {
+
+                    });
+
+                    return req;
                 }
                 //cria
                 else {
-                    $http.post(self.serverUrl + self.entidade, model)
-                        .then(function (result) {
-                            self.data.push(result.data.model);
-                        })
+                    var req = $http.post(self.serverUrl + self.entidade, model);
+
+                    req.then(function (result) {
+                        self.data.push(result.data.model);
+                    });
+
+                    return req;
                 }
             }
         }
+
 
         return self;
     });
