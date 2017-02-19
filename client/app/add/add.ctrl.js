@@ -4,7 +4,7 @@
 
 	function AddCtrl($scope){
 	
-
+		$scope.$parent.title = "Adicionar Valor";
 	}
 
 })();

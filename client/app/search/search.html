@@ -4,7 +4,7 @@
     <input ng-model="name">
   </md-input-container>
 	<md-list>
-	 	<md-list-item ng-repeat="user in users | filter:name" ng-click="selectItem()">
+	 	<md-list-item ng-repeat="user in users | filter:name" ui-sref="home.transaction"">
 			Nome: {{user.name}}
 	 	<md-divider ng-if="!last"></md-divider>
 	 	</md-list-item>

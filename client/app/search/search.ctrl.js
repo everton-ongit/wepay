@@ -4,6 +4,8 @@
 
 	function SearchCtrl($scope){
 
+		$scope.$parent.title = "Pesquisa";
+
 		$scope.users = [
 			{name: 'João Pereira'},
 			{name: 'Maria Carla'},
