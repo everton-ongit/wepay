@@ -10,6 +10,7 @@
             $mdSidenav(menuId).toggle();
         };
 
+<<<<<<< HEAD
         $scope.isUsuarioLogado = function(){
             return appService.usuarioLogado._id;
         } 
@@ -34,15 +35,18 @@
         }
 
         $scope.logar();
+=======
+        $scope.usuarioLogado = appService.usuarioLogado;
+>>>>>>> bea67aa9a1f676f4d5fead1d8a34e600cbfe3951
 
         $scope.menu = [
             {
-                icone: '',
+                icone: 'home',
                 titulo: 'inicio',
                 rota: 'home.start'
             },
             {
-                icone: '',
+                icone: 'add',
                 titulo: 'adicionar',
                 rota: 'home.add'
             }

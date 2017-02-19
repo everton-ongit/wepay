@@ -4,8 +4,8 @@
     <input ng-model="name">
   </md-input-container>
 	<md-list>
-	 	<md-list-item ng-repeat="user in users | filter:name" ui-sref="home.transaction">
-			Nome: {{user.name}}
+	 	<md-list-item ng-repeat="user in users | filter:name" ng-click="navegar(user)">
+			Nome: {{user.nome}}
 	 	<md-divider ng-if="!last"></md-divider>
 	 	</md-list-item>
  	</md-list>

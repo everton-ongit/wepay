@@ -1,8 +1,8 @@
-<div ng-controller="StartCtrl">	
-	<div flex-xs flex-gt-xs="50" layout="column">
+<div ng-controller="StartCtrl" class="md-padding" layout-xs="column" layout="column">	
+	<div flex-xs flex-gt-xs="50" layout-align="center center">
 		<md-card>
 	  	<md-card-title>
-		    <md-card-title-text>
+		    <md-card-title-text layout-align="center center">
 	        <span class="md-headline">Saldo</span>
 	        <span class="md-subhead">R$ 50,00</span>
 		    </md-card-title-text>
@@ -22,7 +22,5 @@
 		 	</md-list-item>
 	 	</md-list>
 	</div>
-	<div layout="row" layout-align="center center">
-		<md-button class="md-fab md-primary" aria-label="pagar" ui-sref="home.search">pagar</md-button>
-	</div>
+	<md-button class="md-fab md-primary md-fab-bottom-right" aria-label="pagar" ui-sref="home.search">pagar</md-button>
 <div>

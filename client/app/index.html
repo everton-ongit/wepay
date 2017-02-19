@@ -39,8 +39,7 @@
 			<div layout="column" class="md-toolbar-tools-bottom inset">
 				<user-avatar></user-avatar>
 				<span></span>
-				<div>Firstname Lastname</div>
-				<div>email@domainname.com</div>
+				<div>{{usuarioLogado.nome}}</div>
 			</div>
 		</md-toolbar>
 		<md-list>
@@ -48,7 +47,7 @@
 				<a ng-click="navegar(item)">
 					<md-item-content md-ink-ripple layout="row" layout-align="start center">
 						<div class="inset">
-							<ng-md-icon icon="{{item.icone}}"></ng-md-icon>
+							<md-icon md-svg-icon="{{item.icone}}"></md-icon>
 						</div>
 						<div class="inset">{{item.titulo}}
 						</div>
@@ -62,7 +61,7 @@
 		<md-toolbar>
 	    <div class="md-toolbar-tools">
 	        <md-button class="md-icon-button" aria-label="Menu Button" hide-gt-md ng-click="toggleSidenav('left')">
-	           <md-icon md-svg-icon="menu" aria-label="menu "></md-icon>
+	           <md-icon md-svg-icon="menu" aria-label="menu"></md-icon>
 	        </md-button>
 	        <h2>{{title}}</h2>
 	        <span flex></span>
