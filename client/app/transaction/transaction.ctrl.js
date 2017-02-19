@@ -7,21 +7,26 @@
 		$scope.$parent.title = "Realizar Transação";
 
 		$scope.user = appService.usuarioRecebedor;
+		$scope.idUsuarioLogado = appService.usuarioLogado._id;
 		$scope.value = 0;
-		
+
 		$scope.pagar = function(){
 			$scope.transacao.date = new Date();
+			$scope.transacao.usuarioRec = $scope.user._id;
+			$scope.transacao.usuarioPag = $scope.idUsuarioLogado;
+
 			var deferred = $q.defer();
 			transacaoService.salvar($scope.transacao).then(function(data, status, header, config) {
 				 if(data.status == 200){
 				 	mensagem('Salvo com Sucesso');
-				 	$scope.transacao = {}; 		
+				 	$scope.transacao = {};
 				 } else {
 					mensagem('Ocorreu um Erro, entre em contato com o suporte');
 				 }
 				 deferred.resolve(data);
 			});
 			deferred.promise;
+			$state.go('home.start');
 		}
 		
 		function mensagem (label){

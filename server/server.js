@@ -40,6 +40,10 @@ app.use('/api', usuario);
 var transacao = require('./app/api/transacaoapi');
 app.use('/api', transacao);
 
+//ENTRADA
+var entrada = require('./app/api/entradaapi');
+app.use('/api', entrada);
+
 // INICIA SERVIDOR
 app.listen(porta);
 console.log('Servidor wepay rodando na porta:' + porta);
